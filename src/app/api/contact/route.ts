@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
 
   if (error) {
     console.error('Supabase insert error:', error);
-    return NextResponse.json({ error: 'Failed to save' }, { status: 500 });
+    return NextResponse.json({ error: 'Failed to save', details: error.message, code: error.code, hint: error.hint }, { status: 500 });
   }
 
   const resend = new Resend(process.env.RESEND_API_KEY);
