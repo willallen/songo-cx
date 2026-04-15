@@ -53,8 +53,35 @@ export default async function WorkItemPage({
 
   const isCaseStudy = item.type === 'case-study';
 
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': isCaseStudy ? 'Article' : 'TechArticle',
+    headline: item.title,
+    description: item.excerpt,
+    datePublished: item.dateISO,
+    author: {
+      '@type': 'Organization',
+      name: 'Songo CX',
+      url: 'https://www.songocx.com',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Songo CX',
+      url: 'https://www.songocx.com',
+    },
+    url: `https://www.songocx.com/work/${slug}`,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://www.songocx.com/work/${slug}`,
+    },
+  };
+
   return (
     <div className="pt-[72px]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       {/* Header */}
       <div className="relative hero-bg py-24 overflow-hidden">
         <svg className="absolute inset-0 w-full h-full opacity-[0.025]" xmlns="http://www.w3.org/2000/svg">

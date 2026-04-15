@@ -5,6 +5,7 @@ export interface WorkItem {
   type: ContentType;
   title: string;
   date: string;
+  dateISO: string; // ISO 8601 for JSON-LD
   tag: string;
   readTime: string;
   excerpt: string;
@@ -18,6 +19,7 @@ export const workItems: WorkItem[] = [
     type: 'case-study',
     title: 'Moving a 300-Agent Contact Center off PureConnect in 90 Days',
     date: 'Q1 2026',
+    dateISO: '2026-01-01',
     tag: 'Financial Services · Migration',
     readTime: '6 min read',
     excerpt:
@@ -29,6 +31,7 @@ export const workItems: WorkItem[] = [
     type: 'case-study',
     title: 'BYOC Cloud with Multi-Site E911 Compliance Across Four Facilities',
     date: 'Q4 2025',
+    dateISO: '2025-10-01',
     tag: 'Healthcare · Carrier Architecture',
     readTime: '7 min read',
     excerpt:
@@ -40,6 +43,7 @@ export const workItems: WorkItem[] = [
     type: 'case-study',
     title: 'Real-Time Salesforce Screen Pop for a 150-Agent Service Team',
     date: 'Q3 2025',
+    dateISO: '2025-07-01',
     tag: 'Retail · Integrations',
     readTime: '5 min read',
     excerpt:
@@ -53,6 +57,7 @@ export const workItems: WorkItem[] = [
     type: 'article',
     title: 'Extracting Structured Data from Call Transcripts in Genesys Cloud',
     date: 'April 2026',
+    dateISO: '2026-04-01',
     tag: 'Analytics & AI',
     readTime: '8 min read',
     excerpt:
@@ -63,6 +68,7 @@ export const workItems: WorkItem[] = [
     type: 'article',
     title: 'Custom Disaster Recovery Middleware for Multi-Region Genesys Cloud',
     date: 'March 2026',
+    dateISO: '2026-03-01',
     tag: 'Architecture',
     readTime: '10 min read',
     excerpt:
@@ -73,6 +79,7 @@ export const workItems: WorkItem[] = [
     type: 'article',
     title: 'Connecting AI Voice Agents to Genesys Cloud via SIP: VAPI, Dialogflow, and LiveKit',
     date: 'February 2026',
+    dateISO: '2026-02-01',
     tag: 'Voice AI',
     readTime: '12 min read',
     excerpt:

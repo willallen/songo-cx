@@ -32,6 +32,23 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Songo CX',
+  url: 'https://www.songocx.com',
+  description:
+    'Boutique Genesys Cloud consulting practice specializing in PureConnect migrations, BYOC carrier architecture, Architect flows, and CRM integrations.',
+  email: 'hello@songocx.com',
+  knowsAbout: [
+    'Genesys Cloud',
+    'PureConnect migration',
+    'BYOC carrier architecture',
+    'Contact center IVR',
+    'Salesforce CTI integration',
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -40,6 +57,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geist.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
